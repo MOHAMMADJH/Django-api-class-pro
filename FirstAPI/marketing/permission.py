@@ -13,4 +13,3 @@ class ContractApprovalPermission(permissions.BasePermission):
                 return True
             else:
                 return False
-#user
