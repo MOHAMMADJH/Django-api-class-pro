@@ -134,6 +134,7 @@ class MeetingTypeList(APIView):
 @permission_classes([ContractApprovalPermission])
 @authentication_classes([TokenAuthentication])
 def approve_contract(request, pk):
+
     try:
         contract = Contract.objects.get(id=pk)
         contract.adminApproval = True
