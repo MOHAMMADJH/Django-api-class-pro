@@ -29,13 +29,16 @@ class ComponentPartItem(models.Model):
 
 class WorkingScope(models.Model):
     title = models.CharField(max_length=200)
+
     def __str__(self):
         return self.title
 class WorkingPart(models.Model):
     project = models.ForeignKey(WorkingScope , on_delete=models.CASCADE)
-    partName  = models.CharField(max_length=200)
+    partName = models.CharField(max_length=200)
+
     def __str__(self):
         return self.partName
+
 class WorkingPartItem(models.Model):
     workingPart = models.ForeignKey(WorkingPart, on_delete=models.CASCADE)
     itemName = models.CharField(max_length=200)
